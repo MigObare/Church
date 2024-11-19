@@ -1,0 +1,47 @@
+
+*{
+    box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#sidenav{
+    width: 300px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    right: -300px;
+    z-index: 2;
+    background: #ffa600;
+    transition: .7s;
+}
+
+nav ul li{
+    list-style: none;
+    margin: 50px 20px;
+}
+nav ul li a{
+    text-decoration: none;
+    color: #fff;
+}
+
+#menuBtn{
+    width: 60px;
+    height: 50px;
+    text-align: center;
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    z-index: 3;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+
+    
+}
+#menuBtn p{
+    width: 60px;
+    margin-top: 15px;
+    color: #fff;
+}

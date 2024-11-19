@@ -1,0 +1,111 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+  <link rel="icon" href="{% static 'images/logo.png' %}" type="image/x-icon">
+  <title>Contact Form</title>
+</head>
+<body>
+
+  <header>
+    <div class="navbar">
+        <div class="logo">
+            <a href="{% url 'app:index' %}">fgck || Nakuru W L.C.A</a>
+        </div>
+        <ul class="links">
+            <li><a href="{% url 'app:index' %}">Home</a></li>
+            <li><a href="{% url 'app:event' %}">Events</a></li>
+            <li><a href="{% url 'app:academy' %}">Academy</a></li>
+            <li><a href="{% url 'app:about' %}">About Us</a></li>
+            <li><a href="{% url 'app:contact' %}">Contact Us</a></li>
+        </ul>
+        <div class="toggle_btn">
+            <i class="fa fa-align-right"></i>
+        </div>
+    </div>
+    <div class="dropdown">
+        <li><a href="{% url 'app:index' %}">Home</a></li>
+        <li><a href="{% url 'app:event' %}">Events</a></li>
+        <li><a href="{% url 'app:academy' %}">Academy</a></li>
+        <li><a href="{% url 'app:about' %}">About Us</a></li>
+        <li><a href="{% url 'app:contact' %}">Contact Us</a></li>
+    </div>
+</header>
+
+<!-- start of contact section -->
+<section id="events">
+  <div class="title">
+      <p>Contact Us</p>
+      <h3>We Value your Feedback </h3>
+  </div>
+
+
+  <div class="events-row">
+    <div class="column">
+      <form action="{% url 'app:contact' %}" enctype="multipart/form-data" method="post">
+        {% csrf_token %}
+        <input type="text" id="fname" placeholder="Enter your First Name" name="fname">
+        <input type="text" id="lname" placeholder="Enter your Last Name" name="lname">
+        <input type="text" id="phone" placeholder="Enter your Phone" name="phone">
+        <input type="email" id="email" placeholder="Enter your Email" name="email">
+        <textarea name="message" id="message" placeholder="Type Your Message Here..." name="message"></textarea>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+  </div> <br><br>
+              {% for message in messages %} 
+                      <h3>{{ message }}</h3>
+              {% endfor %}
+
+</section>
+<!-- End of Contact section -->
+
+<section id="footer1">
+  <div class="footer-row">
+    <div class="footer-l">
+        <h1>Tithes & Offerings</h1>
+        <p><b>Through MPESA</b> </p>
+        <p>Paybill:116519</p>
+        <p>Account No:#0118</p>
+        <p>Skyline Sacco</p>
+    </div>
+    <div class="footer-r">
+        <h1>Get In Touch</h1>
+        <p>fgck Kapkures Facebook Page</p>
+        <p>0100 1212 45</p>
+        <p>fgcknakuru@gmail.com</p>
+    </div>
+</div>
+<div class="socials">
+    <p>Copyright@2024 
+          F.G.C.K Nakuru West L.C.A.
+    </p>
+</div>
+</section>
+
+
+
+
+
+<script>
+  var toggleBtn = document.querySelector('.toggle_btn')
+  var Icon = document.querySelector('.toggle_btn i')
+  var dropdown = document.querySelector('.dropdown')
+
+  toggleBtn.onclick = function() {
+      dropdown.classList.toggle('open')
+      var isOpen = dropdown.classList.contains('open')
+
+      Icon.classList = isOpen
+      ? 'fa fa-close'
+      : 'fa fa-align-right'
+  }
+</script>
+  
+</body>
+</html>

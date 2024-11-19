@@ -1,0 +1,127 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link rel="icon" href="{% static 'images/logo.png' %}" type="image/x-icon">
+    <title>About</title>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <a href="{% url 'app:index' %}">fgck || Nakuru W L.C.A</a>
+            </div>
+            <ul class="links">
+                <li><a href="{% url 'app:index' %}">Home</a></li>
+                <li><a href="{% url 'app:event' %}">Events</a></li>
+                <li><a href="{% url 'app:academy' %}">Academy</a></li>
+                <li><a href="{% url 'app:about' %}">About Us</a></li>
+                <li><a href="{% url 'app:contact' %}">Contact Us</a></li>
+            </ul>
+            <div class="toggle_btn">
+                <i class="fa fa-align-right"></i>
+            </div>
+        </div>
+        <div class="dropdown">
+            <li><a href="{% url 'app:index' %}">Home</a></li>
+            <li><a href="{% url 'app:event' %}">Events</a></li>
+            <li><a href="{% url 'app:academy' %}">Academy</a></li>
+            <li><a href="{% url 'app:about' %}">About Us</a></li>
+            <li><a href="{% url 'app:contact' %}">Contact Us</a></li>
+        </div>
+    </header>
+
+        <!-- About church branches -->
+    <section id="events">
+        <div class="title">
+            <p>Church BRANCHES</p>
+            <h3>Know your Home church</h3>
+        </div>
+        <div class="events-row">
+            <div class="events-col">
+                <h3>Kapkures Branch</h3><br>
+                <p>Mother Church  Nakuru West L.C.A <br>
+                    location : Kapkures <br>
+                    10 MINUTES walk from kapkures shopping center/Stage
+    
+                </p>
+            </div>
+            <div class="events-col">
+                <h3>Ingobor branch</h3> <br>
+                <p> 
+                    Led by pastor Jacob <br>
+                    Location :Ingobor <br>
+                    3 minutes walk from Mombasa shoppig center
+               </p>
+            </div>
+            <div class="events-col">
+                <h3>Lalwet branch</h3>
+                <p><br>
+                    Located at Lalwet Center opposite lalwet dispensary. Its led by pastor Samwel Kandie
+               </p>
+            </div>
+        </div>
+    
+    </section>
+<!-- End of church branches -->
+
+<!-- Church clergy -->
+<section id="events">
+    <div class="title">
+        <p>Clergy</p>
+        <h3>Church Leadership</h3>
+    </div>
+    <div class="events-row">
+        <div class="events-col">
+            <h3>Bishop Wesley ROTICH</h3><br>
+            <p>Senior pastor Rongai District <br>
+                Senior Pastor Nakuru West L.C.A <br> His Office located at Kapkures church (MOTHER CHURCH)<br> 
+            </p>
+        </div>
+        <div class="events-col">
+            <h3>Pst Samwel KANDIE</h3><br>
+            <p> Lalwet church pastor <br>Praise & Worship Patron
+           </p>
+        </div>
+        <div class="events-col">
+            <h3>Pst Joseph CHEMETENY</h3><br>
+            <p>Assistant Pastor at  Kapkures church<br> Sunday School Patron
+
+           </p>
+        </div>
+        <div class="events-col">
+            <h3>Pst Jacob</h3><br>
+            <p>Ingobor Church Pastor <br>
+                Youth Patron Nakuru west L.C.A 
+            </p>
+        </div>
+        <div class="events-col">
+            <h3>Pst william MOINDI</h3><br>
+            <p>Kiptenden church pastor <br>
+           </p>
+        </div>
+    </div>
+</section>
+<!-- end of church clergy -->
+
+    <script>
+        var toggleBtn = document.querySelector('.toggle_btn')
+        var Icon = document.querySelector('.toggle_btn i')
+        var dropdown = document.querySelector('.dropdown')
+
+        toggleBtn.onclick = function() {
+            dropdown.classList.toggle('open')
+            var isOpen = dropdown.classList.contains('open')
+
+            Icon.classList = isOpen
+            ? 'fa fa-close'
+            : 'fa fa-align-right'
+        }
+    </script>
+</body>
+</html>
